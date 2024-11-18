@@ -1,0 +1,20 @@
+/* Center content */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Counts styling */
+.counts {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+}
+
+.counts p {
+  margin: 5px 0;
+}
