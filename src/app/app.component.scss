@@ -7,6 +7,14 @@ main {
   height: 100vh;
 }
 
+/* Button container styling */
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between buttons */
+  margin-bottom: 20px;
+}
+
 /* Counts styling */
 .counts {
   margin-top: 20px;

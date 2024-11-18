@@ -29,4 +29,9 @@ export class AppComponent {
       }
     });
   }
+
+  resetCounts() {
+    this.proceedCount = 0;
+    this.simulateCount = 0;
+  }
 }
