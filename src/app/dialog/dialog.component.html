@@ -1,9 +1,16 @@
 <h1 mat-dialog-title>Dialog Example</h1>
-<div mat-dialog-content>
-  <button mat-raised-button color="primary" (dblclick)="closeDialog('proceed')">
-    Yes, Proceed
-  </button>
-  <button mat-raised-button color="accent" (click)="closeDialog('simulate')">
-    Simulate dblclick
-  </button>
+<div mat-dialog-content class="mat-dialog-content">
+  <p>Choose an action:</p>
+  <div class="button-section">
+    <button
+      mat-raised-button
+      color="primary"
+      (dblclick)="closeDialog('proceed')"
+    >
+      Yes, Proceed
+    </button>
+    <button mat-raised-button color="accent" (click)="closeDialog('simulate')">
+      Simulate dblclick
+    </button>
+  </div>
 </div>
