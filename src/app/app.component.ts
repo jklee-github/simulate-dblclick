@@ -15,23 +15,42 @@ export class AppComponent {
   proceedCount = 0; // Count for 'Yes, Proceed'
   editCount = 0; // Count for 'Simulate dblclick'
 
+  // Edit button
+  private lastClickTime = 0;
+  private clickTimeout: any;
+
   constructor(private dialog: MatDialog) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(reason => {
-      console.log('afterclose');
-
       // Update counts based on the reason received
       if (reason === 'proceed') {
         this.proceedCount++;
       }
     });
   }
-  onEdit() {
-    this.editCount++;
-    // throw new Error('Method not implemented.');
+
+  onEdit(): void {
+    const currentTime = new Date().getTime();
+    const timeSinceLastClick = currentTime - this.lastClickTime;
+
+    if (timeSinceLastClick < 300) {
+      // Clear the timeout for single click
+      clearTimeout(this.clickTimeout);
+
+      // Emit the double-click event
+      console.log('Double-click detected on Edit button');
+    } else {
+      // Set timeout for single click logic, if needed
+      this.clickTimeout = setTimeout(() => {
+        this.editCount++;
+        console.log('Single-click detected on Edit button');
+      }, 300);
+    }
+
+    this.lastClickTime = currentTime;
   }
 
   resetCounts() {

@@ -15,6 +15,7 @@ export class DialogComponent {
 
   // Handle the double-click event
   onProceed(reason: string) {
+    console.log('Single-click detected on "Yes, Proceed" button!');
     this.dialogRef.close(reason);
   }
 
@@ -31,6 +32,7 @@ export class DialogComponent {
 
   // Close dialog with a reason
   closeDialog(reason: string) {
+    console.log('Double-click detected on "Yes, Proceed" button!');
     this.dialogRef.close(reason);
   }
 }
