@@ -21,6 +21,8 @@ export class AppComponent {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(reason => {
+      console.log('afterclose');
+
       // Update counts based on the reason received
       if (reason === 'proceed') {
         this.proceedCount++;

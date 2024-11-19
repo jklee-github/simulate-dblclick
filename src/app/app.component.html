@@ -1,16 +1,18 @@
 <!-- <app-dialog></app-dialog> -->
 <!-- <router-outlet /> -->
 <main>
-  <div class="button-container">
-    <button mat-raised-button color="primary" (click)="openDialog()">
-      Open Dialog
-    </button>
-    <button mat-raised-button color="warn" (click)="resetCounts()">
-      Reset Count
-    </button>
-  </div>
-  <div class="counts">
-    <p>Yes, Proceed Clicked: {{ proceedCount }}</p>
-    <p>Simulate dblclick Clicked: {{ simulateCount }}</p>
-  </div>
+  <section>
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="openDialog()">
+        Open Dialog
+      </button>
+      <button mat-raised-button color="warn" (click)="resetCounts()">
+        Reset Count
+      </button>
+    </div>
+    <div class="counts">
+      <p>Yes, Proceed Clicked: {{ proceedCount }}</p>
+      <p>Simulate dblclick Clicked: {{ simulateCount }}</p>
+    </div>
+  </section>
 </main>

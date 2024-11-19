@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -9,26 +9,30 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './dialog.component.scss',
 })
 export class DialogComponent {
-  @ViewChild('proceedButton', { static: true }) proceedButton!: ElementRef;
+  @ViewChild('proceedButton') proceedButton!: ElementRef<HTMLButtonElement>;
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
 
   // Handle the double-click event
-  // onProceed() {
-  //   console.log('Double-click detected on "Yes, Proceed" button!');
-  // }
+  onProceed(reason: string) {
+    console.log('Double-click detected on "Yes, Proceed" button!');
+
+    this.dialogRef.close(reason);
+  }
 
   // // Simulate a double-click event
-  // simulateDoubleClick() {
-  //   const dblClickEvent = new MouseEvent('dblclick', {
-  //     bubbles: true,
-  //     cancelable: true,
-  //   });
-  //   this.proceedButton.nativeElement.dispatchEvent(dblClickEvent);
-  // }
+  simulateDoubleClick() {
+    // Create and dispatch a dblclick event
+    const dblClickEvent = new MouseEvent('dblclick', {
+      bubbles: true,
+      cancelable: true,
+    });
+    this.proceedButton.nativeElement.dispatchEvent(dblClickEvent);
+  }
 
   // Close dialog with a reason
   closeDialog(reason: string) {
+    this.dialogRef.close(reason);
     this.dialogRef.close(reason);
   }
 }

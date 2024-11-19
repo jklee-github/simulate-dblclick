@@ -2,14 +2,20 @@
 <div mat-dialog-content class="mat-dialog-content">
   <p>Choose an action:</p>
   <div class="button-section">
+    <!-- 
+      (click)="onProceed('proceed')" -->
+    <!-- 
+      (dblclick)="closeDialog('proceed')" -->
     <button
+      #proceedButton
       mat-raised-button
       color="primary"
+      (click)="onProceed('proceed')"
       (dblclick)="closeDialog('proceed')"
     >
       Yes, Proceed
     </button>
-    <button mat-raised-button color="accent" (click)="closeDialog('simulate')">
+    <button mat-raised-button color="accent" (click)="simulateDoubleClick()">
       Simulate dblclick
     </button>
   </div>
