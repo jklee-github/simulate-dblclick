@@ -32,7 +32,7 @@ export class DialogComponent {
 
   // Close dialog with a reason
   closeDialog(reason: string) {
-    console.log('Double-click detected on "Yes, Proceed" button!');
+    // console.log('Double-click detected on "Yes, Proceed" button!');
     this.dialogRef.close(reason);
   }
 }
