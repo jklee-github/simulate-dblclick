@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class AppComponent {
   title = 'simulate-dblclick';
   proceedCount = 0; // Count for 'Yes, Proceed'
-  simulateCount = 0; // Count for 'Simulate dblclick'
+  editCount = 0; // Count for 'Simulate dblclick'
 
   constructor(private dialog: MatDialog) {}
 
@@ -26,14 +26,16 @@ export class AppComponent {
       // Update counts based on the reason received
       if (reason === 'proceed') {
         this.proceedCount++;
-      } else if (reason === 'simulate') {
-        this.simulateCount++;
       }
     });
+  }
+  onEdit() {
+    this.editCount++;
+    // throw new Error('Method not implemented.');
   }
 
   resetCounts() {
     this.proceedCount = 0;
-    this.simulateCount = 0;
+    this.editCount = 0;
   }
 }

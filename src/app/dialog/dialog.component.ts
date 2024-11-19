@@ -15,13 +15,12 @@ export class DialogComponent {
 
   // Handle the double-click event
   onProceed(reason: string) {
-    console.log('Double-click detected on "Yes, Proceed" button!');
-
     this.dialogRef.close(reason);
   }
 
   // // Simulate a double-click event
   simulateDoubleClick() {
+    console.log('Double-click detected on "Yes, Proceed" button!');
     // Create and dispatch a dblclick event
     const dblClickEvent = new MouseEvent('dblclick', {
       bubbles: true,
@@ -32,7 +31,6 @@ export class DialogComponent {
 
   // Close dialog with a reason
   closeDialog(reason: string) {
-    this.dialogRef.close(reason);
     this.dialogRef.close(reason);
   }
 }
