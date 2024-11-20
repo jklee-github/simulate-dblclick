@@ -39,15 +39,15 @@ export class AppComponent {
     if (timeSinceLastClick < 300) {
       // Clear the timeout for single click
       clearTimeout(this.clickTimeout);
-
       // Emit the double-click event
       console.log('Double-click detected on Edit button');
     } else {
       // Set timeout for single click logic, if needed
       this.clickTimeout = setTimeout(() => {
-        this.editCount++;
         console.log('Single-click detected on Edit button');
       }, 300);
+
+      this.editCount++;
     }
 
     this.lastClickTime = currentTime;
